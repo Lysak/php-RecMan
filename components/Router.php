@@ -47,8 +47,7 @@ class Router
         }
 
         if (!$success_run) {
-            $view = new View();
-            $view->render('/views/site/404');
+            Response::renderNotFound();
         }
     }
 

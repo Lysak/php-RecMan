@@ -2,48 +2,36 @@
 
 namespace src\controllers;
 
-use components\View;
+use components\Helpers;
+use components\Response;
 use Throwable;
 
 class SiteController
 {
-    /**
-     * @var View
-     */
-    private View $view;
-
-    /**
-     * SiteController constructor.
-     */
-    public function __construct()
-    {
-        $this->view = new View();
-    }
-
     public function actionIndex(): void
     {
         try {
-            $this->view->render('/views/site/index', ['$e->getMessage()']);
+            Response::render('/views/site/index');
         } catch (Throwable $e) {
-            $this->view->render('/views/site/error', [$e->getMessage()]);
+            Response::render('/views/site/error', [$e->getMessage()], Helpers::HTTP_BAD_REQUEST);
         }
     }
 
     public function actionLogin(): void
     {
         try {
-            $this->view->success('/views/site/login');
+            Response::render('/views/site/login');
         } catch (Throwable $e) {
-            $this->view->notFound($e->getMessage());
+            Response::render('/views/site/error', [$e->getMessage()], Helpers::HTTP_BAD_REQUEST);
         }
     }
 
     public function actionSignup(): void
     {
         try {
-            $this->view->success('/views/site/signup');
+            Response::render('/views/site/signup');
         } catch (Throwable $e) {
-            $this->view->notFound($e->getMessage());
+            Response::render('/views/site/error', [$e->getMessage()], Helpers::HTTP_BAD_REQUEST);
         }
     }
 }

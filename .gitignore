@@ -4,3 +4,4 @@ composer.phar
 .idea
 /config/params.php
 /config/db_params.php
+/config/config.php

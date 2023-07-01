@@ -5,7 +5,7 @@
   "require": {
     "php": "^8.2",
     "ext-json": "*",
-    "ext-pdo": "*"
+    "ext-sqlite3": "*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
@@ -15,7 +15,10 @@
       "src\\": "src/",
       "components\\": "components/",
       "public\\": "public/"
-    }
+    },
+    "files": [
+      "src/core/functions.php"
+    ]
   },
   "scripts": {
     "serve": "php8.2 -S 0.0.0.0:8080 -t public"

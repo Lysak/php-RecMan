@@ -17,5 +17,7 @@
 </head>
 <body>
 <div>Hello word!</div>
+<a href="/login">Login</a>
+<a href="/signup">Signup</a>
 </body>
 </html>
