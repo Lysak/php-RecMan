@@ -1,0 +1,23 @@
+{
+  "config": {
+    "soft-package": true
+  },
+  "require": {
+    "php": "^8.2",
+    "ext-json": "*",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "src\\": "src/",
+      "components\\": "components/",
+      "public\\": "public/"
+    }
+  },
+  "scripts": {
+    "serve": "php8.2 -S 0.0.0.0:8080 -t public"
+  }
+}
